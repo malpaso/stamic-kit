@@ -32,5 +32,4 @@ export_paths:
   - tailwind.config.js
   - vite.config.js
   - postcss.config.js
-  - CHANGELOG.md
   - README.md
