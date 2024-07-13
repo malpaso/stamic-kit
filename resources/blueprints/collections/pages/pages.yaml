@@ -1,0 +1,56 @@
+title: Pages
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+      -
+        handle: page_header
+        field:
+          default: false
+          display: 'Page Header'
+          type: toggle
+          icon: toggle
+          width: 50
+          listable: hidden
+          instructions_position: above
+      -
+        handle: alignment
+        field:
+          options:
+            left: Left
+            center: Center
+          display: Alignment
+          type: button_group
+          icon: button_group
+          width: 50
+          listable: hidden
+          instructions_position: above
+          validate:
+            - 'required_if:page_header,true'
+          if:
+            page_header: 'equals true'
+      -
+        import: blocks
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          localizable: true
+          validate:
+            - required
+            - 'new \Statamic\Rules\UniqueEntryValue({collection}, {id}, {site})'
+  seo:
+    display: SEO
+    fields:
+      -
+        import: seo

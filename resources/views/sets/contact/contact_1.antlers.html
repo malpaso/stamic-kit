@@ -1,0 +1,16 @@
+<div class="container py-20">
+    {{ if title }}
+        {{ partial:components.heading :label="title" size="h1" color="blue" line="true" center="true" }}
+    {{ /if }}
+
+    <div class="flex flex-wrap py-20">
+        <div class="mb-10 md:w-7/12 md:mb-0">
+            <div class="max-w-3xl mx-auto">
+                {{ partial:components/picture cover="true" }}
+            </div>
+        </div>
+        <div class="w-full md:w-5/12">
+            {{ partial:partials.contact_form }}
+        </div>
+    </div>
+</div>

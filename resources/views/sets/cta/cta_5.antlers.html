@@ -1,0 +1,22 @@
+<div class="relative py-24 overflow-hidden bg-gray-200">
+    <div class="container">
+        <div class="flex flex-wrap">
+            <div class="md:w-5/12">
+                {{ if title }}
+                    {{ partial:components.heading :label="title" size="h1" color="blue" }}
+                {{ /if }}
+
+                {{ if description }}
+                    {{ partial:components.lead :label="description" size="lg" color="bluegray" class="mt-4" }}
+                {{ /if }}
+
+                {{ if toggle and label }}
+                    {{ partial:components.arrow_link }}
+                {{ /if }}
+            </div>
+            <div class="max-w-2xl mx-auto mt-16 ml-4 xl:ml-auto xl:mt-0">
+                {{ partial:components/picture cover="true" }}
+            </div>
+        </div>
+    </div>
+</div>

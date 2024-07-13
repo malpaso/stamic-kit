@@ -1,0 +1,21 @@
+<div class="container flex flex-col items-center justify-between py-16 md:py-24">
+
+    <div class="max-w-3xl mx-auto mb-6 text-center">
+        {{ if title }}
+            {{ partial:components.heading :label="title" size="h1" color="blue" }}
+        {{ /if }}
+
+        {{ if description }}
+            {{ partial:components.lead :label="description" size="xl" color="bluegray" class="mt-4" }}
+        {{ /if }}
+    </div>
+
+    {{ if toggle and label }}
+        {{ partial:components.button size="{button_size}" color="{variant}" }}
+    {{ /if }}
+
+    {{# Add Width #}}
+    <div class="max-w-3xl mx-auto mt-12">
+        {{ partial:components/picture cover="true" }}
+    </div>
+</div>
